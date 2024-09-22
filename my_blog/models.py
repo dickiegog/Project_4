@@ -9,6 +9,8 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="posts")
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10, choices=(('Draft', 'Draft'), ('Published', 'Published')), default='Draft')
+    class Meta:
+        ordering = ["-created_on"]
 
     def __str__(self):
         return self.title
@@ -24,5 +26,8 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ["created_on"]
+
     def __str__(self):
-        return f"Comment by {self.author} on {self.post}"
+        return f"Comment {self.post} by {self.author}"
