@@ -11,9 +11,10 @@
 <body>
     <h1>Posts list</h1>
     {% for post in object_list %}
-    <h2>{{post.title}}</h2>
-    <p>{{post.excerpt}}</p>
-    <p>Author: {{post.author}}</p>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body|truncatewords:30 }}</p> <!-- Truncate the body to the first 30 words -->
+    <p>Author: {{ post.author }}</p>
+    <p>Published on: {{ post.created_on }}</p>
     {% endfor %}
 </body>
 
