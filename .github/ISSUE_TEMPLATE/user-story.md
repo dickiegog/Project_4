@@ -7,4 +7,13 @@ assignees: ''
 
 ---
 
-As a **role** I can **capability** so that **received benefit**
+### User Story
+As a **role**, I can **capability** so that **received benefit**.
+
+### Acceptance Criteria
+-  **Criteria 1**: Description of the first acceptance criteria.
+-  **Criteria 2**: Description of the second acceptance criteria.
+
+### Tasks
+- [ ] Task 1: Description of the first task.
+- [ ] Task 2: Description of the second task.
