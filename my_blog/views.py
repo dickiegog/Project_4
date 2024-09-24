@@ -7,7 +7,6 @@ class PostList(generic.ListView):
     template_name = "blog/index.html"
     paginate_by = 6
 
-# The post_detail function should be outside the class
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
@@ -22,7 +21,7 @@ def post_detail(request, slug):
     :template:`blog/post_detail.html`
     """
 
-    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.filter(status='Published')
     post = get_object_or_404(queryset, slug=slug)
 
     return render(

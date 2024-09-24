@@ -6,7 +6,6 @@ from django.utils.text import slugify
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    body = models.TextField()
     excerpt = models.TextField(blank=True, null=True)  
     body = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
