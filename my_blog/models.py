@@ -2,6 +2,19 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 
+CATEGORY_CHOICES = [
+    ('tech', 'Tech'),
+    ('lifestyle', 'Lifestyle'),
+    ('education', 'Education'),
+    ('sports', 'Sports'),
+]
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
 # Post Model
 
 class Post(models.Model):
@@ -11,6 +24,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True) 
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='tech')
     status = models.CharField(max_length=10, choices=(('Draft', 'Draft'), ('Published', 'Published')), default='Draft')
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
 

@@ -2,15 +2,41 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.views import generic
 from django.contrib import messages
-from .models import Post, About, CollaborateRequest, Comment
+from django.db.models import Q 
+from .models import Post, About, CollaborateRequest, Comment, Category
 from .forms import CommentForm, CollaborateForm
 
 
-class PostList(generic.ListView):
-    queryset = Post.objects.all()
+class PostList(ListView):
+    model = Post
     template_name = "blog/index.html"
+    context_object_name = "posts"
     paginate_by = 6
 
+    def get_queryset(self):
+        queryset = Post.objects.filter(status='Published')
+        query = self.request.GET.get('q')
+        category_filter = self.request.GET.get('category')
+
+        if query:
+            queryset = queryset.filter(
+                Q(title__icontains=query) | Q(body__icontains=query)
+            )
+
+        if category_filter:
+            queryset = queryset.filter(category__name=category_filter)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Fetch categories from the database
+        context['categories'] = Category.objects.all()
+        context['query'] = self.request.GET.get('q') if self.request.GET.get('q') else ''
+        context['selected_category'] = self.request.GET.get('category') if self.request.GET.get('category') else ''
+        return context
+
+        
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
