@@ -3,17 +3,17 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+<div class="masthead" style="margin-top: 10px; position: relative; width: 100%; height: fit-content; background-color: #445261; color: white; padding: 0px 0; display: flex; align-items: stretch;">
+    <div class="container padding: 0;">
+        <div class="row g-0 align-items-stretch">
+            <div class="col-md-6 masthead-text" style="display: flex; flex-direction: column; justify-content: center;">
+                <!-- Post title -->
+                <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 10px;">{{ post.title }}</h1>
+                <!-- Post author and date -->
+                <p class="post-subtitle" style="color: lightgray; font-size: 1rem;">{{ post.author }} | {{ post.created_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+            <div class="d-none d-md-block col-md-6 masthead-image" style="position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                <img src="{% static 'images/default.jpg' %}" class="scale img-fluid rounded" alt="placeholder" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </div>

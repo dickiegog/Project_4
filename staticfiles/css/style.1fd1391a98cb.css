@@ -133,26 +133,15 @@ body {
     color: #445261;
     text-decoration: underline;
 }
+/* Grey out draft posts */
 .draft-post {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light grey background */
     opacity: 0.6;
-    position: relative;
-    border: 1px solid #ccc;
-}
-
-.badge {
-    font-size: 0.8rem;
-    padding: 5px 10px;
+    pointer-events: none; /* Prevent interaction */
 }
 
 .draft-link {
-    cursor: not-allowed;
-    color: #888;
-    text-decoration: none;
-}
-
-.draft-link:hover {
-    color: #888;
+    cursor: not-allowed; /* Change the cursor to indicate it's not clickable */
 }
 
 .btn-like {
