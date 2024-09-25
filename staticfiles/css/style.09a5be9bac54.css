@@ -169,7 +169,7 @@ body {
 .form-inline .form-control {
     width: auto;
     min-width: 150px; 
-    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
 .input-group {

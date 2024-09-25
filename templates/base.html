@@ -114,7 +114,6 @@
           <form method="get" action="{% url 'home' %}" class="form-inline my-2 my-lg-0">
             <div class="input-group">
               <select name="category" onchange="this.form.submit()">
-                <option value="">All Categories</option>
                 {% for category in categories %}
                     <option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>
                         {{ category }}
@@ -170,13 +169,13 @@
     <footer class="footer mt-auto py-3 dark-bg">
       <div class="container text-center">
         <p class="m-0 text-white">Made by Code Instituters</p>
-        <p class="m-0 text-white">
+        <!-- <p class="m-0 text-white">
           Follow us:
           <i class="fab fa-facebook-square ms-3"></i>
           <i class="fab fa-twitter-square ms-3"></i>
           <i class="fab fa-instagram-square ms-3"></i>
           <i class="fab fa-youtube-square ms-3"></i>
-        </p>
+        </p> -->
       </div>
     </footer>
 

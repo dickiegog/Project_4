@@ -1,17 +1,18 @@
 # Blog Application - Django Project
 
 ## Table of Contents
+
 1. [Project Overview](#project-overview)
 2. [User Experience (UX)](#user-experience-ux)
-    - [User Stories](#user-stories)
+   - [User Stories](#user-stories)
 3. [Features](#features)
-    - [Implemented Features](#implemented-features)
-    - [Future Features](#future-features)
+   - [Implemented Features](#implemented-features)
+   - [Future Features](#future-features)
 4. [Database Design](#database-design)
 5. [Technologies Used](#technologies-used)
 6. [Testing](#testing)
-    - [Manual Testing](#manual-testing)
-    - [Automated Testing](#automated-testing)
+   - [Manual Testing](#manual-testing)
+   - [Automated Testing](#automated-testing)
 7. [Deployment](#deployment)
 8. [Credits](#credits)
 
@@ -24,38 +25,28 @@ This project was influenced by the structure of the [FlyUX Project](https://gith
 ## User Experience (UX)
 
 ### User Stories
+
 - A list of user stories to explain functionality and how we developed them can be found here:
-(https://github.com/dickiegog/Project_4/issues)
-
-#### As a Potential Collaborator:
-- I want to submit a collaboration request form to contact the site owner.
-- I want to receive a confirmation that my request was submitted successfully.
-
-#### As a Regular Site User:
-- I want to view blog posts with clear titles and publication dates.
-- I want to leave comments on blog posts.
-- I want to edit or delete my own comments.
-
-#### As a Site Admin:
-- I want to approve or delete user comments.
-- I want to manage blog posts and comments via the admin panel.
-- I want to mark collaboration requests as read and respond to them.
+  (https://github.com/dickiegog/Project_4/issues)
 
 ## Features
 
 ### Implemented Features
+
 - **Post Detail View**: Displays individual blog posts with the ability to leave, edit, or delete comments.
 - **About Me Page**: Contains a form for potential collaborators to reach out to the site owner.
 - **Comment System**: Users can leave comments on posts, edit or delete their own comments, and site admins can approve or delete comments.
 - **Admin Management**: Site admins can manage posts and comments through the Django admin interface.
 
 ### Future Features
+
 - **Comment Notifications**: Users could receive notifications when their comments are approved or replied to.
 - **Post Categories**: Posts could be organized by categories or tags for better filtering.
 
 ## Database Design
 
 The project uses Django's ORM for database management. The key models are:
+
 - **Post**: Represents a blog post with fields such as `title`, `body`, `author`, `created_on`, `status`, and `slug`.
 - **Comment**: Represents a comment left on a blog post with fields such as `post`, `author`, `body`, `approved`, and `created_on`.
 - **About**: Represents the content for the "About Me" page.
@@ -78,100 +69,111 @@ The project uses Django's ORM for database management. The key models are:
 ### Manual Testing
 
 - **Commenting System**:
-    - Tested the ability for users to leave, edit, and delete comments.
-    - Verified that site admins can approve or delete comments via the admin panel.
+  - Tested the ability for users to leave, edit, and delete comments.
+  - Verified that site admins can approve or delete comments via the admin panel.
 - **Form Validation**:
-    - Submitted invalid data in forms to ensure validation messages are displayed.
-    - Checked that the collaboration request form works as expected and is stored in the database.
+  - Submitted invalid data in forms to ensure validation messages are displayed.
+  - Checked that the collaboration request form works as expected and is stored in the database.
 - **Navigation**:
-    - Tested that the navigation links (home, about, login, logout) function properly.
+  - Tested that the navigation links (home, about, login, logout) function properly.
 - **Mobile Responsiveness**:
-    - Ensured that the application is responsive on different screen sizes using browser developer tools.
+  - Ensured that the application is responsive on different screen sizes using browser developer tools.
 
 ### Automated Testing
 
 - Django’s built-in testing framework was used for unit testing of models and views.
 - To run tests:
-    ```bash
-    python manage.py test
-    ```
+  ```bash
+  python manage.py test
+  ```
 
 ## Deployment
 
 ### Heroku Deployment
 
 1. Ensure all dependencies are listed in `requirements.txt`:
-    ```bash
-    pip freeze > requirements.txt
-    ```
+
+   ```bash
+   pip freeze > requirements.txt
+   ```
 
 2. Add `Procfile` to the root directory with the following content:
-    ```bash
-    web: gunicorn my_project.wsgi:application
-    ```
+
+   ```bash
+   web: gunicorn my_project.wsgi:application
+   ```
 
 3. Push the code to GitHub.
 
 4. Create a new Heroku app:
-    ```bash
-    heroku create <app-name>
-    ```
+
+   ```bash
+   heroku create <app-name>
+   ```
 
 5. Set up PostgreSQL as the database:
-    ```bash
-    heroku addons:create heroku-postgresql:hobby-dev
-    ```
+
+   ```bash
+   heroku addons:create heroku-postgresql:hobby-dev
+   ```
 
 6. Set environment variables:
-    ```bash
-    heroku config:set SECRET_KEY=<your-secret-key>
-    heroku config:set DEBUG=False
-    ```
+
+   ```bash
+   heroku config:set SECRET_KEY=<your-secret-key>
+   heroku config:set DEBUG=False
+   ```
 
 7. Push to Heroku:
-    ```bash
-    git push heroku main
-    ```
+
+   ```bash
+   git push heroku main
+   ```
 
 8. Run database migrations:
-    ```bash
-    heroku run python manage.py migrate
-    ```
+
+   ```bash
+   heroku run python manage.py migrate
+   ```
 
 9. Collect static files:
-    ```bash
-    heroku run python manage.py collectstatic
-    ```
+   ```bash
+   heroku run python manage.py collectstatic
+   ```
 
 ### Local Deployment
 
 To run the project locally:
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/dickiegog/Project_4.git
-    ```
+
+   ```bash
+   git clone https://github.com/dickiegog/Project_4.git
+   ```
 
 2. Install the dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. Set up the database and apply migrations:
-    ```bash
-    python manage.py makemigrations
-    python manage.py migrate
-    ```
+
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
 
 4. Create a superuser:
-    ```bash
-    python manage.py createsuperuser
-    ```
+
+   ```bash
+   python manage.py createsuperuser
+   ```
 
 5. Run the development server:
-    ```bash
-    python manage.py runserver
-    ```
+   ```bash
+   python manage.py runserver
+   ```
 
 ## Credits
 
@@ -179,6 +181,7 @@ To run the project locally:
 - The project uses several open-source libraries such as Django, Crispy Forms, and Bootstrap 5.
 
 ## Requirements File
+
 ```txt
 asgiref==3.8.1
 crispy-bootstrap5==0.7
@@ -195,3 +198,4 @@ python3-openid==3.2.0
 requests-oauthlib==2.0.0
 sqlparse==0.5.1
 whitenoise==5.3.0
+```
