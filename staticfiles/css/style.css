@@ -168,13 +168,15 @@ body {
 }
 .form-inline .form-control {
     width: auto;
-    min-width: 150px; /* To ensure inputs are not too narrow */
+    min-width: 150px; 
+    padding-right: 10px;
 }
 
 .input-group {
     display: flex;
     align-items: center;
     margin-right: 10px;
+    padding-right: 10px;
 }
 
 .navbar .form-inline {

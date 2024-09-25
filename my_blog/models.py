@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 
 CATEGORY_CHOICES = [
-    ('tech', 'Tech'),
-    ('lifestyle', 'Lifestyle'),
-    ('education', 'Education'),
-    ('sports', 'Sports'),
+    ('Tech', 'Tech'),
+    ('Lifestyle', 'Lifestyle'),
+    ('Education', 'Education'),
+    ('Sports', 'Sports'),
 ]
 
 class Category(models.Model):
