@@ -188,6 +188,7 @@ To run the project locally:
 
 - Allow users to edit their profiles
 - Allow users to like/ react to posts and commnets
+- Add "Previous" button to allow users navigate backwards
 
 ## Requirements File
 
