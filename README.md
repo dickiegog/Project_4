@@ -20,8 +20,6 @@
 
 The **Blog Application** is a fully-featured blog platform built using Django. It allows users to view, comment on, and interact with blog posts. Authenticated users can submit comments, and site administrators can moderate and manage posts and comments via the Django admin panel. The project also includes an "About Me" page with a collaboration request form, where potential collaborators can reach out to the site owner.
 
-This project was influenced by the structure of the [FlyUX Project](https://github.com/CarlMurray/flyUX-pp4/blob/main/README.md), which provided inspiration for the thorough documentation and clear development process.
-
 ## User Experience (UX)
 
 ### User Stories
@@ -52,6 +50,10 @@ The project uses Django's ORM for database management. The key models are:
 - **About**: Represents the content for the "About Me" page.
 - **CollaborateRequest**: Stores requests for collaboration, including `name`, `email`, and `message`.
 
+### Diagram
+
+![Database Diagram](assets/P4_Diagram.png)
+
 ## Technologies Used
 
 - **Django 4.2.16**: The web framework used to build the application.
@@ -79,13 +81,11 @@ The project uses Django's ORM for database management. The key models are:
 - **Mobile Responsiveness**:
   - Ensured that the application is responsive on different screen sizes using browser developer tools.
 
-### Automated Testing
+### Lighthouse Test
 
-- Django’s built-in testing framework was used for unit testing of models and views.
-- To run tests:
-  ```bash
-  python manage.py test
-  ```
+The Lighthouse test confirms that the web application meet has top marks for performance, accessibility, best practices, and SEO standards.
+
+![Lighthouse Test](assets/P4_Lighthouse.png)
 
 ## Deployment
 
@@ -175,10 +175,19 @@ To run the project locally:
    python manage.py runserver
    ```
 
+### Home Page After Succesful Deployment
+
+![Home Page](assets/P4_Home.png)
+
 ## Credits
 
 - [FlyUX Project](https://github.com/CarlMurray/flyUX-pp4/blob/main/README.md) provided inspiration for structuring this README.
 - The project uses several open-source libraries such as Django, Crispy Forms, and Bootstrap 5.
+
+## Future Features
+
+- Allow users to edit their profiles
+- Allow users to like/ react to posts and commnets
 
 ## Requirements File
 
