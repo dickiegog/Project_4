@@ -52,3 +52,13 @@ class About(models.Model):
     def __str__(self):
         return self.title
         
+#  Collaboration Requests
+class CollaborateRequest(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    read = models.BooleanField(default=False)  # To mark requests as read
+    submitted_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.email}"
