@@ -166,23 +166,6 @@ body {
     position: relative;
     border: 1px solid #ccc;
 }
-.form-inline .form-control {
-    width: auto;
-    min-width: 150px; /* To ensure inputs are not too narrow */
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    padding-right: 10px;
-}
-
-.navbar .form-inline {
-    display: flex;
-    align-items: center;
-    width: auto;
-}
 
 .badge {
     font-size: 0.8rem;

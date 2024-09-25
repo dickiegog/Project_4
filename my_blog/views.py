@@ -1,11 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
-from django.views import generic
+from django.views.generic import ListView
 from django.contrib import messages
 from django.db.models import Q 
-from .models import Post, About, CollaborateRequest, Comment, Category
+from .models import Post, About, CollaborateRequest, Comment, Category, CATEGORY_CHOICES
 from .forms import CommentForm, CollaborateForm
-
 
 class PostList(ListView):
     model = Post
@@ -14,29 +13,42 @@ class PostList(ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        queryset = Post.objects.filter(status='Published')
-        query = self.request.GET.get('q')
-        category_filter = self.request.GET.get('category')
+        # Start with all posts
+        queryset = Post.objects.all()
+        print(f"Initial fetched posts: {queryset}")
 
+        # Handle search query
+        query = self.request.GET.get('q')
         if query:
             queryset = queryset.filter(
                 Q(title__icontains=query) | Q(body__icontains=query)
             )
+            print(f"Posts after search filtering: {queryset}")
 
-        if category_filter:
-            queryset = queryset.filter(category__name=category_filter)
+        # Handle category filter
+        category_filter = self.request.GET.get('category')
+        print(f"Selected category filter: {category_filter}")
+        if category_filter and category_filter != 'All Categories':
+            queryset = queryset.filter(Q(category=category_filter) | Q(category=''))
+            print(f"Posts after category filtering: {queryset}")
 
+        print(f"Final queryset before return: {queryset}")
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Fetch categories from the database
-        context['categories'] = Category.objects.all()
-        context['query'] = self.request.GET.get('q') if self.request.GET.get('q') else ''
-        context['selected_category'] = self.request.GET.get('category') if self.request.GET.get('category') else ''
+        # Fetch categories from CATEGORY_CHOICES and add "All Categories" option
+        context['categories'] = ['All Categories'] + [category[0] for category in CATEGORY_CHOICES]
+        print(f"Available categories: {context['categories']}")
+
+        # Preserve query and selected category in the context
+        context['query'] = self.request.GET.get('q') or ''
+        context['selected_category'] = self.request.GET.get('category') or ''
+        print(f"Selected query: {context['query']}")
+        print(f"Selected category: {context['selected_category']}")
+        
         return context
 
-        
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
