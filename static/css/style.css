@@ -10,6 +10,7 @@ body {
     padding-top: 100px;
 }
 
+
 /* Typography */
 .brand {
     font-size: 1.6rem;
@@ -46,17 +47,37 @@ body {
 /* Card Styles */
 .card {
     border: none;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    transition: transform 0.2s ease-in-out;
+    background: linear-gradient(135deg, #d2e8ff, #cde5fb);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    color: #1a1a1a;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
+.card:hover::before {
+    opacity: 1;
+}
 .image-container {
     position: relative;
     border-radius: 10px;
@@ -109,7 +130,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     margin-top: 10px;
-    color: #2C3E50;
+    color: #3ac3c8;
 }
 
 .post-subtitle {
@@ -120,7 +141,7 @@ body {
 /* Buttons */
 .btn-signup,
 .btn-edit {
-    background: linear-gradient(135deg, #27AE60, #2ECC71);
+    background: linear-gradient(135deg, #0f2fff, #2160f3);
     color: white;
     padding: 10px 20px;
     border: none;
