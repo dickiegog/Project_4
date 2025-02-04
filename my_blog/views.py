@@ -33,7 +33,7 @@ class PostList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Fetch categories from CATEGORY_CHOICES and add "All Categories" option
-        context['categories'] = ['All Categories'] + [category[0] for category in CATEGORY_CHOICES]
+        context['categories'] = [category[0] for category in CATEGORY_CHOICES]
 
         # Preserve query and selected category in the context
         context['query'] = self.request.GET.get('q') or ''

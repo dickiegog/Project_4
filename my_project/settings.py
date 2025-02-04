@@ -25,9 +25,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure-xy&hy-(uv@s@2-0^y+bmcgi!l+wcpdrt-!grwan%leo&o0%1+7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-dickiegog-project4-fs7812x3cre.ws-eu116.gitpod.io','.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['8000-dickiegog-project4-fs7812x3cre.ws-eu116.gitpod.io', '8000-dickiegog-project4-b6zz9s8azrn.ws-eu117.gitpod.io', 'herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -91,11 +91,15 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3"))
 }
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-dickiegog-project4-fs7812x3cre.ws-eu116.gitpod.io',
     'https://project4blog-c2232dcf1cab.herokuapp.com',
+    "https://8000-dickiegog-project4-b6zz9s8azrn.ws-eu117.gitpod.io",
+    "http://127.0.0.1",
+    "http://localhost",
+
 ]
 
 

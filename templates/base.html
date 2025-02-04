@@ -46,8 +46,8 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">
           <span class="brand"
-            >c<span class="red-o">o</span>de<span class="thin"
-              >|star</span
+            >S<span class="red-o">A</span>G<span class="thin"
+              >AAAH</span
             ></span
           >
         </a>
@@ -111,25 +111,26 @@
             </li>
             {% endif %}
           </ul>
-          <form method="get" action="{% url 'home' %}" class="form-inline my-2 my-lg-0">
+          <form method="get" action="{% url 'home' %}" class="navbar-search">
             <div class="input-group">
-              <select name="category" onchange="this.form.submit()">
-                {% for category in categories %}
-                    <option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>
-                        {{ category }}
-                    </option>
-                {% endfor %}
-            </select>
-              <input class="form-control mr-2" type="search" name="q" placeholder="Search" value="{{ query }}">
-              
-              <div class="input-group-append">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </div>
+                <select name="category" class="custom-select" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    {% for category in categories %}
+                        <option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>
+                            {{ category }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <input class="search-input" type="search" name="q" placeholder="Search..." value="{{ query }}">
+                <button class="search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
-          </form>
-          <span class="navbar-text text-muted">
-            Adventures of a software developer
-          </span>
+        </form>
+        <span class="navbar-text">
+            <em>A Software Saga!</em>
+        </span>
+        
         </div>
       </div>
     </nav>
