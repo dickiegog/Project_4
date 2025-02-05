@@ -82,8 +82,6 @@ The final design evolved from these initial wireframes while keeping usability a
 
 ## Testing
 
-## Testing
-
 ### Manual Testing
 
 Testing was performed manually for each section of the site to ensure all features work as expected. Below are the specific test cases documented in a step-wise manner.
@@ -140,7 +138,7 @@ These warnings were **acknowledged but ignored**, as **ES6 is fully supported by
 ---
 ### Lighthouse Test
 
-The Lighthouse test confirms that the web application meet has top marks for performance, accessibility, best practices, and SEO standards.
+The Lighthouse test confirms that the web application meet has top marks for performance, accessibility, best practices, and SEO standards. Django semantics for href may have slightly reduced optimisation for SEO results.
 
 ![Lighthouse Test](assets/P4_Lighthouse.png)
 
