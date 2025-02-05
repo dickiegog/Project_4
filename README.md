@@ -82,6 +82,35 @@ The final design evolved from these initial wireframes while keeping usability a
 
 ## Testing
 
+### **3️⃣ Automated Testing (Python Unit Tests)**
+
+Unit tests were written in `tests.py` to validate core functionality in the **Django app**, ensuring that models, views, and forms behave as expected.
+
+#### **Test File (`tests.py`)**
+![Tests.py File](assets/testPY.png)
+
+#### **Test Execution**
+The tests were run using:
+```bash
+python manage.py test my_blog
+```
+#### **Test Output**
+```
+Found 17 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+.................
+----------------------------------------------------------------------
+Ran 17 tests in 2.807s
+
+OK
+Destroying test database for alias 'default'...
+```
+
+#### **Result:**  
+✅ **All 17 tests passed successfully.**
+
+
 ### Manual Testing
 
 Testing was performed manually for each section of the site to ensure all features work as expected. Below are the specific test cases documented in a step-wise manner.
