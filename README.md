@@ -68,24 +68,99 @@ The project uses Django's ORM for database management. The key models are:
 
 ## Testing
 
+## Testing
+
 ### Manual Testing
 
-- **Commenting System**:
-  - Tested the ability for users to leave, edit, and delete comments.
-  - Verified that site admins can approve or delete comments via the admin panel.
-- **Form Validation**:
-  - Submitted invalid data in forms to ensure validation messages are displayed.
-  - Checked that the collaboration request form works as expected and is stored in the database.
-- **Navigation**:
-  - Tested that the navigation links (home, about, login, logout) function properly.
-- **Mobile Responsiveness**:
-  - Ensured that the application is responsive on different screen sizes using browser developer tools.
+Testing was performed manually for each section of the site to ensure all features work as expected. Below are the specific test cases documented in a step-wise manner.
 
+#### **Navigation Links**
+- **Expected:** Clicking on navigation links should take the user to the corresponding page.
+- **Testing:** Clicked each navigation link (Home, About, Register, Login, Logout) and observed the page load.
+- **Result:** All links function correctly, taking users to the expected page.
+- **Fix:** No fix required.
+
+#### **Commenting System**
+- **Expected:** Logged-in users should be able to add, edit, and delete comments. Admins should be able to approve or delete comments.
+- **Testing:** Tested adding, editing, and deleting comments with different user roles.
+- **Result:** Comments behaved as expected, updating dynamically.
+- **Fix:** No fix required.
+
+#### **Forms and Input Validation**
+- **Expected:** Forms should validate inputs and prevent submission of empty or incorrect data.
+- **Testing:** Entered invalid data (empty fields, incorrect email formats) and observed error messages.
+- **Result:** Validation messages appeared correctly.
+- **Fix:** No fix required.
+
+---
+
+### **2️⃣ Responsive Design Testing**
+- The site was tested for responsiveness using **[Responsive Design Checker](https://responsivedesignchecker.com/)**.
+- It was tested on the following screen sizes:
+  - **Mobile (375px width)**
+  - **Tablet (768px width)**
+  - **Desktop (1920px width)**
+- **Result:** The layout adjusted correctly on all screen sizes.
+
+---
+
+### **3️⃣ Code Validation**
+The following validation tools were used:
+- **HTML Validation**: W3C Markup Validator  
+  ![HTML Validation](assets/HTMLValidator.png)
+- **CSS Validation**: W3C CSS Validator  
+  ![CSS Validation](assets/CSSValidator.png)
+- ### JavaScript Validation
+
+JavaScript was validated using **JSHint**. The following warnings were noted:
+
+- `const`, `let`, and arrow functions (`=>`) flagged as ES6+ syntax.
+- Template literals (`` `${variable}` ``) flagged as ES6+ syntax.
+- `for...of` loops flagged as ES6+ syntax.
+
+These warnings were **acknowledged but ignored**, as **ES6 is fully supported by modern browsers** and is an intentional choice in this project.
+
+![JSHint ES6 Warnings](assets/JSValidator.png)
+
+
+---
 ### Lighthouse Test
 
 The Lighthouse test confirms that the web application meet has top marks for performance, accessibility, best practices, and SEO standards.
 
 ![Lighthouse Test](assets/P4_Lighthouse.png)
+
+### **4️⃣ User Stories & Feature Testing**
+Each user story and feature was tested to ensure proper functionality.
+
+| **Feature** | **Expected Outcome** | **Testing Performed** | **Result** |
+|------------|--------------------|----------------------|------------|
+| Register/Login | Users should be able to register and log in. | Created a new user account, logged in, and logged out. | ✅ Passed |
+| Comment System | Users should be able to comment on posts. | Added, edited, and deleted comments. | ✅ Passed |
+| Navigation | Clicking links should take users to the correct page. | Clicked all navigation links and observed. | ✅ Passed |
+
+---
+
+### **5️⃣ Bug Fixes & Documentation**
+#### **Bugs Encountered**
+| **Bug** | **Issue** | **Fix Applied** |
+|---------|----------|---------------|
+| JavaScript ES6 Errors | JSHint flagged `const`, `let`, and `arrow functions` as invalid. | Configured `.jshintrc` to support ES6. |
+| Favicon Not Loading | Favicon path incorrect. | Updated `{% static 'images/favicon.ico' %}` in `<head>`. |
+
+#### **Open Issues**
+- No major unresolved issues at this time.
+
+---
+
+### **6️⃣ Test Coverage Summary**
+- **All buttons and links** tested and working.
+- **Forms validated** with correct error handling.
+- **Code validated** using W3C tools and JSHint.
+- **No major issues** found after fixes.
+
+For more details, refer to the repository: [GitHub Project](https://github.com/dickiegog/Project_4)
+
 
 ## Deployment
 
