@@ -107,12 +107,18 @@ Testing was performed manually for each section of the site to ensure all featur
 ---
 
 ### **2️⃣ Responsive Design Testing**
-- The site was tested for responsiveness using **[Responsive Design Checker](https://responsivedesignchecker.com/)**.
-- It was tested on the following screen sizes:
-  - **Mobile (375px width)**
-  - **Tablet (768px width)**
-  - **Desktop (1920px width)**
-- **Result:** The layout adjusted correctly on all screen sizes.
+The site was tested for responsiveness by manually adjusting the screen size and capturing screenshots.
+
+#### **Tested Screen Sizes:**
+- **Mobile**
+  ![Mobile View](assets/mobileView.png)
+- **Tablet**
+  ![Tablet View](assets/tabletView.png)
+- **Desktop**
+  ![Desktop View](assets/desktopView.png)
+
+#### **Result:**
+✅ The layout adjusted correctly across all screen sizes, ensuring a consistent user experience on **mobile, tablet, and desktop** devices.
 
 ---
 
