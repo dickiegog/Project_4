@@ -1,32 +1,34 @@
-{% load static %} 
-{% url 'home' as home_url %} 
-{% url 'about' as about_url %} 
-{% url 'account_login' as login_url %} 
-{% url 'account_signup' as signup_url %} 
-{% url 'account_logout' as logout_url %}
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
   <head>
     <title>Richards Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Load static files and URLs -->
+    {% load static %}
+    {% url 'home' as home_url %}
+    {% url 'about' as about_url %}
+    {% url 'account_login' as login_url %}
+    {% url 'account_signup' as signup_url %}
+    {% url 'account_logout' as logout_url %}
 
     <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" >
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
-    />
+    >
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap"
       rel="stylesheet"
-    />
+    >
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
+    >
 
     <!-- Bootstrap CSS -->
     <link
@@ -34,10 +36,10 @@
       rel="stylesheet"
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
-    />
+    >
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
   </head>
 
   <body class="d-flex flex-column h-100 main-bg">
@@ -169,7 +171,7 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
       <div class="container text-center">
-        <p class="m-0 text-white">Made by Code Instituters</p>
+        <p class="m-0 text-white">Made by RGoggin</p>
         <!-- <p class="m-0 text-white">
           Follow us:
           <i class="fab fa-facebook-square ms-3"></i>
