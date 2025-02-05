@@ -192,7 +192,7 @@ Each user story and feature was tested to ensure proper functionality.
 #### **Bugs Encountered**
 | **Bug** | **Issue** | **Fix Applied** |
 |---------|----------|---------------|
-| JavaScript ES6 Errors | JSHint flagged `const`, `let`, and `arrow functions` as invalid. | Configured `.jshintrc` to support ES6. |
+| JavaScript ES6 Errors | JSHint flagged `const`, `let`, and `arrow functions` as invalid. | Ignored, as ES6 is fully supported by modern browsers |
 | Favicon Not Loading | Favicon path incorrect. | Updated `{% static 'images/favicon.ico' %}` in `<head>`. |
 
 #### **Open Issues**
