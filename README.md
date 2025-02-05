@@ -54,6 +54,20 @@ The project uses Django's ORM for database management. The key models are:
 
 ![Database Diagram](assets/P4_Diagram.png)
 
+## User Experience (UX)
+
+### Wireframes
+
+Before development, wireframes were created to plan the layout and structure of key pages. These wireframes served as a guide for implementing the blog interface and navigation.
+
+- **Home Page Wireframe**  
+  ![Home Page Wireframe](assets/homePage.jpg)
+
+- **Blog Page Wireframe**  
+  ![Blog Page Wireframe](assets/blogPage.jpg)
+
+The final design evolved from these initial wireframes while keeping usability and accessibility in mind.
+
 ## Technologies Used
 
 - **Django 4.2.16**: The web framework used to build the application.

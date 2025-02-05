@@ -4,6 +4,7 @@
     <title>Richards Blog</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Welcome to Richard's Software Blog – A place to share thoughts, insights, and ideas. Read, comment, and engage with great content.">
     
     <!-- Load static files and URLs -->
     {% load static %}
@@ -115,7 +116,7 @@
           </ul>
           <form method="get" action="{% url 'home' %}" class="navbar-search">
             <div class="input-group">
-                <select name="category" class="custom-select" onchange="this.form.submit()">
+                <select name="category" class="custom-select" onchange="this.form.submit()" aria-label="Choose a category">
                     <option value="">All Categories</option>
                     {% for category in categories %}
                         <option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>
@@ -124,7 +125,7 @@
                     {% endfor %}
                 </select>
                 <input class="search-input" type="search" name="q" placeholder="Search..." value="{{ query }}">
-                <button class="search-btn" type="submit">
+                <button class="search-btn" type="submit" aria-label="Search">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
