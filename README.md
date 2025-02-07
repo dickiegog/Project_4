@@ -146,6 +146,11 @@ The site was tested for responsiveness by manually adjusting the screen size and
 - **Desktop**
   ![Desktop View](assets/desktopView.png)
 
+  And using responsive design websites.
+
+- **Multiple Screens**
+  ![Desktop View](assets/Multiple.png)
+
 #### **Result:**
 ✅ The layout adjusted correctly across all screen sizes, ensuring a consistent user experience on **mobile, tablet, and desktop** devices.
 
