@@ -22,6 +22,26 @@
                 {{ form.as_p }}
                 <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %}</button>
             </form>
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                <strong>Form Errors:</strong>
+                <ul>
+                {% for field, errors in form.errors.items %}
+                    <li>{{ field }}: {{ errors }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% if form.non_field_errors %}
+                <div class="alert alert-warning">
+                    <strong>Other Errors:</strong>
+                    <ul>
+                        {% for error in form.non_field_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
