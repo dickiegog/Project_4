@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-dickiegog-project4-fs7812x3cre.ws-eu116.gitpod.io', 'project4blog-c2232dcf1cab.herokuapp.com', '8000-dickiegog-project4-b6zz9s8azrn.ws-eu117.gitpod.io', '.herokuapp.com', '127.0.0.1', 'localhost', '*']
+ALLOWED_HOSTS = ['8000-dickiegog-project4-etsf6ixpg0c.ws-eu118.gitpod.io', 'project4blog-c2232dcf1cab.herokuapp.com', '8000-dickiegog-project4-b6zz9s8azrn.ws-eu117.gitpod.io', '.herokuapp.com', '127.0.0.1', 'localhost', '*']
 
 
 # Application definition
@@ -96,7 +96,7 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3"))
 }
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-dickiegog-project4-fs7812x3cre.ws-eu116.gitpod.io',
+    'https://8000-dickiegog-project4-etsf6ixpg0c.ws-eu118.gitpod.io',
     'https://project4blog-c2232dcf1cab.herokuapp.com',
     "https://8000-dickiegog-project4-b6zz9s8azrn.ws-eu117.gitpod.io",
     "http://127.0.0.1",
